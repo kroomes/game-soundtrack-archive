@@ -1,0 +1,229 @@
+/* -------------------- RESET -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------- BODY -------------------- */
+body {
+  background: #050505;
+  color: #00f5ff;
+  font-family: 'Press Start 2P', cursive;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* -------------------- GLOBAL LINKS -------------------- */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------- NAV -------------------- */
+header {
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 2px solid #a970ff;
+  padding: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 12px;
+  color: #00f5ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #00f5ff;
+  font-size: 10px;
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #b4ebe4;
+}
+
+/* -------------------- MAIN -------------------- */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 40px;
+}
+
+/* -------------------- HERO -------------------- */
+.hero,
+.games-hero {
+  text-align: center;
+  margin-bottom: 150px; 
+}
+
+.section-title,
+.games-page-title {
+  color: #a970ff;
+  font-size: 1rem;
+  text-shadow: 0 0 4px rgba(169, 112, 255, 0.35);
+}
+
+.hero p,
+.games-hero-text {
+  font-size: 11px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 30px auto 0 auto;
+}
+
+/* -------------------- CATEGORY -------------------- */
+.archive-category,
+.games-category {
+  margin-bottom: 80px;
+}
+
+.genre-title,
+.games-genre-title {
+  color: #a970ff;
+  font-size: 0.75rem;
+  margin-bottom: 24px;
+  text-shadow: 0 0 3px rgba(169, 112, 255, 0.25);
+}
+
+/* -------------------- GRID -------------------- */
+.archive-grid,
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* -------------------- CARD LINKS -------------------- */
+.card-link,
+.game-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------- CARDS -------------------- */
+.card,
+.game-card {
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.18); /* subtle glow */
+  transition: all 0.25s ease;
+}
+
+.card h3,
+.game-card h4 {
+  color: #00f5ff;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  transition: color 0.25s ease;
+}
+
+/* -------------------- HOVER -------------------- */
+.card:hover,
+.game-card:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 20px #b4ebe4,
+    0 0 30px #b4ebe4 inset;
+}
+
+.card:hover h3,
+.game-card:hover h4 {
+  color: #b4ebe4; 
+}
+
+/* -------------------- SPARKLES -------------------- */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sparkle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  opacity: 0.2;
+  background: radial-gradient(circle, currentColor 0%, transparent 60%);
+  animation: sparkle 3s infinite;
+}
+
+.sparkle-1, .sparkle-4, .sparkle-7 { color: #ff00d9; }
+.sparkle-2, .sparkle-5, .sparkle-8 { color: #ff2e63; }
+.sparkle-3, .sparkle-6, .sparkle-9 { color: #ffffff; }
+
+.sparkle-1 { top: 10%; left: 10%; }
+.sparkle-2 { top: 20%; left: 70%; }
+.sparkle-3 { top: 30%; left: 30%; }
+.sparkle-4 { top: 50%; left: 80%; }
+.sparkle-5 { top: 60%; left: 20%; }
+.sparkle-6 { top: 70%; left: 60%; }
+
+@keyframes sparkle {
+  0% { opacity: 0.1; transform: scale(0.7); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+  100% { opacity: 0.1; transform: scale(0.7); }
+}
+
+/* -------------------- MOBILE -------------------- */
+@media (max-width: 768px) {
+  header {
+    padding: 16px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  main {
+    padding: 40px 20px;
+  }
+
+  .archive-grid,
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title,
+  .games-page-title {
+    font-size: 0.85rem;
+  }
+
+  .genre-title,
+  .games-genre-title {
+    font-size: 0.65rem;
+  }
+
+  .card h3,
+  .game-card h4 {
+    font-size: 0.55rem;
+  }
+}
