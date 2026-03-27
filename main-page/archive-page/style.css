@@ -10,6 +10,13 @@ body {
   background: black;
   color: #00ffff;
   font-family: 'Press Start 2P', cursive;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* GLOBAL LINKS */
+a {
+  text-decoration: none;
 }
 
 /* NAV */
@@ -24,11 +31,6 @@ body {
 .logo {
   font-size: 12px;
   color: #00f5ff;
-
-  text-shadow:
-    0 0 6px #00f5ff,
-    0 0 12px #00f5ff,
-    0 0 24px #00f5ff;
 }
 
 .nav-links {
@@ -42,6 +44,12 @@ body {
   text-decoration: none;
   font-size: 0.7rem;
 }
+
+.nav a:hover {
+  color: #b4ebe4;
+}
+
+/* CARD LINKS */
 .card-link,
 .card-link:visited,
 .card-link:hover,
@@ -59,6 +67,7 @@ body {
 .hero {
   text-align: center;
   padding: 4rem 2rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
@@ -69,67 +78,51 @@ body {
   font-size: 11px;
   line-height: 1.8;
   max-width: 700px;
- margin: 30px auto 0 auto;
+  margin: 30px auto 0 auto;
 }
 
-/* -------------------- GRID -------------------- */
+/* CATEGORY */
+.archive-category {
+  padding: 0 2rem 4rem;
+}
+
+/* GRID */
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
-/* -------------------- CARDS -------------------- */
+/* CARDS */
 .card {
   border: 2px solid #00ffff;
   border-radius: 8px;
-  padding: 1.5rem; 
+  padding: 1.5rem;
   background: rgba(0, 0, 0, 0.85);
   text-align: center;
-  min-height: 150px; 
-
-.card {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   box-shadow: none;
-}
   transition: all 0.25s ease;
 }
 
-/* -------------------- TITLE -------------------- */
+/* TITLE */
 .card h3 {
-  color: #00f5ff; 
+  color: #00f5ff;
   font-size: 10px;
-  margin-bottom: 12px; 
-
-  text-shadow:
-    0 0 5px #00f5ff,
-    0 0 10px #00f5ff;
+  margin-bottom: 12px;
 }
 
-/* -------------------- DESCRIPTION -------------------- */
+/* DESCRIPTION */
 .card p {
   font-size: 9px;
   line-height: 1.5;
   margin-top: 6px;
 }
 
-/* -------------------- HOVER -------------------- */
-.card:hover {
-  transform: scale(1.02); 
-  box-shadow:
-    0 0 14px #b4ebe4,
-    0 0 22px #b4ebe4 inset;
-}
-
-/* -------------------- MOBILE -------------------- */
-@media (max-width: 768px) {
-  .archive-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-/* HOVER EFFECT */
+/* HOVER */
 .card:hover {
   transform: scale(1.03);
   box-shadow:
@@ -137,82 +130,81 @@ body {
     0 0 30px #b4ebe4 inset;
 }
 
-/* -------------------- CSS SPARKLES -------------------- */
-
-.sparkles{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
+.card:hover h3 {
+  color: #b4ebe4;
 }
 
-.sparkle{
-  position:absolute;
-  width:42px;
-  height:42px;
-  opacity:0.22;
-  animation:sparkleTwinkle 3.2s ease-in-out infinite;
+/* CSS SPARKLES */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sparkle {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  opacity: 0.22;
+  animation: sparkleTwinkle 3.2s ease-in-out infinite;
+  background:
+    radial-gradient(circle, currentColor 0%, rgba(255,255,255,0.85) 10%, transparent 38%);
 }
 
 /* main vertical + horizontal rays */
 .sparkle::before,
-.sparkle::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  border-radius:999px;
+.sparkle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
 }
 
 /* vertical ray */
-.sparkle::before{
-  width:1.5px;
-  height:100%;
-  background:linear-gradient(to bottom, transparent, currentColor 20%, currentColor 80%, transparent);
+.sparkle::before {
+  width: 1.5px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, currentColor 20%, currentColor 80%, transparent);
 }
 
 /* horizontal ray */
-.sparkle::after{
-  width:100%;
-  height:1.5px;
-  background:linear-gradient(to right, transparent, currentColor 20%, currentColor 80%, transparent);
+.sparkle::after {
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, currentColor 20%, currentColor 80%, transparent);
 }
 
 /* diagonal rays */
 .sparkle i,
-.sparkle b{
-  display:block;
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:1.5px;
-  height:80%;
-  transform-origin:center;
-  border-radius:999px;
-  background:linear-gradient(to bottom, transparent, currentColor 20%, currentColor 80%, transparent);
+.sparkle b {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5px;
+  height: 80%;
+  transform-origin: center;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, transparent, currentColor 20%, currentColor 80%, transparent);
 }
 
-.sparkle i{
-  transform:translate(-50%, -50%) rotate(45deg);
+.sparkle i {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.sparkle b{
-  transform:translate(-50%, -50%) rotate(-45deg);
-}
-
-/* center glow */
-.sparkle{
-  background:
-    radial-gradient(circle, currentColor 0%, rgba(255,255,255,0.85) 10%, transparent 38%);
+.sparkle b {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* color variations */
 .sparkle-1,
 .sparkle-4,
 .sparkle-7,
-.sparkle-10{
-  color:#ff00d9;
+.sparkle-10 {
+  color: #ff00d9;
   filter:
     drop-shadow(0 0 4px #4c40f1)
     drop-shadow(0 0 10px #00f5ff);
@@ -221,8 +213,8 @@ body {
 .sparkle-2,
 .sparkle-5,
 .sparkle-8,
-.sparkle-11{
-  color:#ff2e63;
+.sparkle-11 {
+  color: #ff2e63;
   filter:
     drop-shadow(0 0 4px #ff2e63)
     drop-shadow(0 0 10px #ff2e63);
@@ -231,52 +223,56 @@ body {
 .sparkle-3,
 .sparkle-6,
 .sparkle-9,
-.sparkle-12{
-  color:#ffffff;
+.sparkle-12 {
+  color: #ffffff;
   filter:
     drop-shadow(0 0 4px #0cb73c)
     drop-shadow(0 0 10px #ffffff);
 }
 
 /* positions + sizes + timing */
-.sparkle-1{ top:8%; left:10%; width:28px; height:28px; animation-delay:0s; }
-.sparkle-2{ top:16%; left:76%; width:18px; height:18px; animation-delay:1.2s; }
-.sparkle-3{ top:30%; left:22%; width:34px; height:34px; animation-delay:0.7s; }
-.sparkle-4{ top:44%; left:88%; width:22px; height:22px; animation-delay:2s; }
-.sparkle-5{ top:60%; left:12%; width:16px; height:16px; animation-delay:1.6s; }
-.sparkle-6{ top:70%; left:66%; width:30px; height:30px; animation-delay:0.4s; }
-.sparkle-7{ top:84%; left:38%; width:20px; height:20px; animation-delay:2.4s; }
-.sparkle-8{ top:12%; left:48%; width:14px; height:14px; animation-delay:1s; }
-.sparkle-9{ top:22%; left:58%; width:24px; height:24px; animation-delay:2.8s; }
-.sparkle-10{ top:52%; left:42%; width:18px; height:18px; animation-delay:1.4s; }
-.sparkle-11{ top:76%; left:84%; width:26px; height:26px; animation-delay:0.9s; }
-.sparkle-12{ top:90%; left:18%; width:16px; height:16px; animation-delay:2.1s; }
+.sparkle-1 { top: 8%; left: 10%; width: 28px; height: 28px; animation-delay: 0s; }
+.sparkle-2 { top: 16%; left: 76%; width: 18px; height: 18px; animation-delay: 1.2s; }
+.sparkle-3 { top: 30%; left: 22%; width: 34px; height: 34px; animation-delay: 0.7s; }
+.sparkle-4 { top: 44%; left: 88%; width: 22px; height: 22px; animation-delay: 2s; }
+.sparkle-5 { top: 60%; left: 12%; width: 16px; height: 16px; animation-delay: 1.6s; }
+.sparkle-6 { top: 70%; left: 66%; width: 30px; height: 30px; animation-delay: 0.4s; }
+.sparkle-7 { top: 84%; left: 38%; width: 20px; height: 20px; animation-delay: 2.4s; }
+.sparkle-8 { top: 12%; left: 48%; width: 14px; height: 14px; animation-delay: 1s; }
+.sparkle-9 { top: 22%; left: 58%; width: 24px; height: 24px; animation-delay: 2.8s; }
+.sparkle-10 { top: 52%; left: 42%; width: 18px; height: 18px; animation-delay: 1.4s; }
+.sparkle-11 { top: 76%; left: 84%; width: 26px; height: 26px; animation-delay: 0.9s; }
+.sparkle-12 { top: 90%; left: 18%; width: 16px; height: 16px; animation-delay: 2.1s; }
 
-@keyframes sparkleTwinkle{
-  0%{
-    opacity:0.06;
-    transform:scale(0.7);
+@keyframes sparkleTwinkle {
+  0% {
+    opacity: 0.06;
+    transform: scale(0.7);
   }
-  25%{
-    opacity:0.3;
-    transform:scale(0.92);
+  25% {
+    opacity: 0.3;
+    transform: scale(0.92);
   }
-  50%{
-    opacity:1;
-    transform:scale(1.15);
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
   }
-  75%{
-    opacity:0.35;
-    transform:scale(0.95);
+  75% {
+    opacity: 0.35;
+    transform: scale(0.95);
   }
-  100%{
-    opacity:0.08;
-    transform:scale(0.72);
+  100% {
+    opacity: 0.08;
+    transform: scale(0.72);
   }
 }
 
-/* -------------------- MOBILE -------------------- */
+/* MOBILE */
 @media (max-width: 768px) {
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav {
     flex-direction: column;
     gap: 15px;
