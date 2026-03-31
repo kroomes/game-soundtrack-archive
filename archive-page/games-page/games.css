@@ -38,6 +38,12 @@ header {
 .logo {
   font-size: 12px;
   color: #00f5ff;
+  text-shadow:
+    0 0 6px #00f5ff,
+    0 0 12px #00f5ff,
+    0 0 24px #00f5ff,
+    0 0 48px #00f5ff;
+
 }
 
 .nav-links {
@@ -54,6 +60,10 @@ header {
 
 .nav-links a:hover {
   color: #b4ebe4;
+  text-shadow:
+    0 0 5px #b4ebe4,
+    0 0 10px #b4ebe4,
+    0 0 20px #b4ebe4;
 }
 
 /* -------------------- MAIN -------------------- */
@@ -67,14 +77,17 @@ main {
 .hero,
 .games-hero {
   text-align: center;
-  margin-bottom: 150px; 
+  margin-bottom: 150px;
 }
 
 .section-title,
 .games-page-title {
   color: #a970ff;
-  font-size: 1rem;
-  text-shadow: 0 0 4px rgba(169, 112, 255, 0.35);
+  text-shadow:
+    0 0 6px #a970ff,
+    0 0 12px #a970ff,
+    0 0 24px #a970ff,
+    0 0 48px #a970ff;
 }
 
 .hero p,
@@ -96,7 +109,9 @@ main {
   color: #a970ff;
   font-size: 0.75rem;
   margin-bottom: 24px;
-  text-shadow: 0 0 3px rgba(169, 112, 255, 0.25);
+  text-shadow:
+    0 0 4px rgba(169, 112, 255, 0.4),
+    0 0 10px rgba(169, 112, 255, 0.2);
 }
 
 /* -------------------- GRID -------------------- */
@@ -126,7 +141,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 6px rgba(0, 255, 255, 0.18); /* subtle glow */
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.18);
   transition: all 0.25s ease;
 }
 
@@ -149,7 +164,7 @@ main {
 
 .card:hover h3,
 .game-card:hover h4 {
-  color: #b4ebe4; 
+  color: #b4ebe4;
 }
 
 /* -------------------- SPARKLES -------------------- */
