@@ -430,10 +430,11 @@ footer {
   .logo {
     font-size: 12px;
     line-height: 1.5;
-    text-shadow: 0 0 4px rgba(0, 245, 255, 0.4); /* lighter glow */
+    text-shadow:
+      0 0 4px rgba(0, 245, 255, 0.6),
+      0 0 8px rgba(0, 245, 255, 0.5);
   }
 
-  /* MAIN SPACING */
   main {
     padding: 36px 16px;
   }
@@ -444,25 +445,24 @@ footer {
     margin: 28px auto;
   }
 
-  /* HEADINGS */
   .hero h2,
   .section-title {
     font-size: 18px;
     line-height: 1.4;
-    text-shadow: 0 0 4px rgba(169, 112, 255, 0.4); /* reduced blur */
+    text-shadow:
+      0 0 5px rgba(169, 112, 255, 0.6),
+      0 0 10px rgba(169, 112, 255, 0.4);
   }
 
-  /* BODY TEXT (IMPORTANT) */
   .hero p,
   .intro p,
   .entry-text {
     font-size: 13px;
     line-height: 1.8;
     letter-spacing: 0.5px;
-    text-shadow: none; /* REMOVE blur completely */
+    text-shadow: none;
   }
 
-  /* CARDS */
   .archive-grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -483,7 +483,6 @@ footer {
     text-shadow: none;
   }
 
-  /* BUTTON */
   .start-btn {
     font-size: 12px;
     padding: 14px 18px;
