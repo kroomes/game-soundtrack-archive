@@ -413,6 +413,7 @@ footer {
 /* -------------------- MOBILE -------------------- */
 @media (max-width: 768px) {
 
+  /* NAV */
   .nav {
     flex-direction: column;
     align-items: center;
@@ -427,46 +428,41 @@ footer {
   }
 
   .logo {
-    font-size: 10px;
-    line-height: 1.4;
-    text-shadow:
-      0 0 4px #00f5ff,
-      0 0 8px #00f5ff,
-      0 0 14px #00f5ff;
+    font-size: 12px;
+    line-height: 1.5;
+    text-shadow: 0 0 4px rgba(0, 245, 255, 0.4); /* lighter glow */
   }
 
+  /* MAIN SPACING */
   main {
-    padding: 34px 16px;
+    padding: 36px 16px;
   }
 
-  .intro,
-  .hero {
-    width: 100%;
-    max-width: none;
-    margin: 28px auto;
+  .hero,
+  .intro {
     padding: 24px 16px;
+    margin: 28px auto;
   }
 
-  .section-title,
-  .hero h2 {
-    font-size: 16px;
+  /* HEADINGS */
+  .hero h2,
+  .section-title {
+    font-size: 18px;
     line-height: 1.4;
-    text-shadow:
-      0 0 3px #a970ff,
-      0 0 7px #a970ff,
-      0 0 12px #a970ff;
+    text-shadow: 0 0 4px rgba(169, 112, 255, 0.4); /* reduced blur */
   }
 
-  .intro p,
+  /* BODY TEXT (IMPORTANT) */
   .hero p,
-  .entry-text,
-  .card p {
-    font-size: 11px;
-    line-height: 1.9;
+  .intro p,
+  .entry-text {
+    font-size: 13px;
+    line-height: 1.8;
     letter-spacing: 0.5px;
-    max-width: 100%;
+    text-shadow: none; /* REMOVE blur completely */
   }
 
+  /* CARDS */
   .archive-grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -477,12 +473,20 @@ footer {
   }
 
   .card h3 {
-    font-size: 11px;
-    line-height: 1.5;
+    font-size: 13px;
+    text-shadow: none;
   }
 
+  .card p {
+    font-size: 12px;
+    line-height: 1.6;
+    text-shadow: none;
+  }
+
+  /* BUTTON */
   .start-btn {
-    font-size: 10px;
+    font-size: 12px;
     padding: 14px 18px;
+    text-shadow: none;
   }
 }
