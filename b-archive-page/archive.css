@@ -458,3 +458,73 @@ footer {
   }
 
 }
+/* -------------------- MOBILE -------------------- */
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main {
+    padding: 40px 18px 70px;
+  }
+
+  .intro {
+    margin: 40px auto;
+    padding: 0 10px;
+  }
+
+  .hero {
+    padding: 35px 18px;
+  }
+
+  .archive-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .logo {
+    font-size: 11px;
+    line-height: 1.5;
+    text-shadow:
+      0 0 2px rgba(0, 245, 255, 0.45),
+      0 0 4px rgba(0, 245, 255, 0.25);
+  }
+
+  .hero h2,
+  .section-title,
+  .card h3 {
+    text-shadow:
+      0 0 2px rgba(169, 112, 255, 0.45),
+      0 0 5px rgba(169, 112, 255, 0.22);
+  }
+
+  .hero h2,
+  .section-title {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .card h3 {
+    font-size: 10px;
+  }
+
+  .hero p,
+  .intro p,
+  .card p,
+  .entry-text {
+    font-size: 9px;
+    line-height: 1.8;
+    letter-spacing: 0.4px;
+    text-shadow: none;
+  }
+}

@@ -355,8 +355,8 @@ section {
     font-size: 12px;
     line-height: 1.5;
     text-shadow:
-      0 0 4px rgba(0, 245, 255, 0.6),
-      0 0 8px rgba(0, 245, 255, 0.5);
+      0 0 2px rgba(0, 245, 255, 0.45),
+      0 0 4px rgba(0, 245, 255, 0.25);
   }
 
   .games-page {
@@ -364,12 +364,19 @@ section {
     padding: 40px 18px 70px;
   }
 
+  /* MATCH HOMEPAGE GLOW EXACTLY */
+  .games-page-title,
+  .games-genre-title,
+  h2,
+  h3 {
+    text-shadow:
+      0 0 2px rgba(169, 112, 255, 0.45),
+      0 0 5px rgba(169, 112, 255, 0.22) !important;
+  }
+
   .games-page-title {
     font-size: 18px;
     line-height: 1.5;
-    text-shadow:
-      0 0 5px rgba(169, 112, 255, 0.6),
-      0 0 10px rgba(169, 112, 255, 0.4);
   }
 
   .games-genre-title {
