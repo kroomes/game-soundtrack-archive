@@ -370,7 +370,7 @@ section {
   h3 {
     text-shadow:
       0 0 2px rgba(169, 112, 255, 0.45),
-      0 0 5px rgba(169, 112, 255, 0.22) !important;
+      0 0 5px rgba(169, 112, 255, 0.22) 
   }
 
   .games-page-title {
