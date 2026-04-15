@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* -------------------- GLOBAL -------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: #00f5ff;
+  font-family: 'Press Start 2P', cursive;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img,
+iframe {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* -------------------- SPARKLES -------------------- */
+
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sparkle {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  opacity: 0.22;
+  animation: sparkleTwinkle 3.2s ease-in-out infinite;
+  background: radial-gradient(circle, currentColor 0%, rgba(255, 255, 255, 0.85) 10%, transparent 38%);
+}
+
+/* ✨ CHANGED COLORS FOR ANIMAL CROSSING ✨ */
+
+.sparkle-1,
+.sparkle-4,
+.sparkle-7,
+.sparkle-10 {
+  color: #00ff94; /* green glow */
+  filter:
+    drop-shadow(0 0 4px #00ff94)
+    drop-shadow(0 0 10px #00ff94);
+}
+
+.sparkle-2,
+.sparkle-5,
+.sparkle-8,
+.sparkle-11 {
+  color: #7affc1; /* soft mint */
+  filter:
+    drop-shadow(0 0 4px #7affc1)
+    drop-shadow(0 0 10px #7affc1);
+}
+
+.sparkle-3,
+.sparkle-6,
+.sparkle-9,
+.sparkle-12 {
+  color: #ffffff;
+}
+
+/* -------------------- HEADER -------------------- */
+
+header {
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 3px solid #00ff94; /* green instead of purple */
+  padding: 20px;
+}
+
+.logo {
+  color: #00ff94;
+  text-shadow:
+    0 0 5px #00ff94,
+    0 0 10px #00ff94,
+    0 0 20px #00ff94;
+}
+
+/* -------------------- TEXT + HEADINGS -------------------- */
+
+.games-page-title {
+  color: #00ff94;
+  text-shadow:
+    0 0 8px #00ff94,
+    0 0 16px #00ff94,
+    0 0 32px #00ff94;
+}
+
+.games-genre-title {
+  color: #00ff94;
+  text-shadow:
+    0 0 6px #00ff94,
+    0 0 12px #00ff94;
+}
+
+/* -------------------- CARDS -------------------- */
+
+.game-card {
+  background: rgba(0, 0, 0, 0.72);
+  border: 2px solid #00ff94;
+  border-radius: 12px;
+  box-shadow:
+    0 0 10px rgba(0, 255, 148, 0.2),
+    0 0 20px rgba(0, 255, 148, 0.1);
+}
+
+/* -------------------- LINKS -------------------- */
+
+.sources-list a:hover {
+  color: #7affc1;
+  text-shadow:
+    0 0 5px #7affc1,
+    0 0 10px #7affc1;
+}
+
+/* -------------------- MOBILE -------------------- */
+
+@media (max-width: 768px) {
+  .games-page-title,
+  .games-genre-title,
+  h2,
+  h3 {
+    text-shadow:
+      0 0 2px rgba(0, 255, 148, 0.45),
+      0 0 5px rgba(0, 255, 148, 0.22);
+  }
+}
