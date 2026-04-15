@@ -15,7 +15,8 @@ body {
   position: relative;
 }
 
-img {
+img,
+iframe {
   max-width: 100%;
   display: block;
 }
@@ -85,8 +86,6 @@ a {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* sparkle colors */
-
 .sparkle-1,
 .sparkle-4,
 .sparkle-7,
@@ -116,8 +115,6 @@ a {
     drop-shadow(0 0 4px #0cb73c)
     drop-shadow(0 0 10px #ffffff);
 }
-
-/* sparkle positions */
 
 .sparkle-1  { top: 8%;  left: 10%; width: 28px; height: 28px; animation-delay: 0s; }
 .sparkle-2  { top: 16%; left: 76%; width: 18px; height: 18px; animation-delay: 1.2s; }
@@ -153,22 +150,6 @@ a {
     opacity: 0.08;
     transform: scale(0.72);
   }
-}
-
-/* -------------------- TYPOGRAPHY -------------------- */
-
-h2 {
-  color: #a970ff;
-}
-
-.section-title {
-  color: #a970ff;
-  letter-spacing: 1px;
-  text-shadow:
-    0 0 8px #a970ff,
-    0 0 16px #a970ff,
-    0 0 32px #a970ff,
-    0 0 64px #a970ff;
 }
 
 /* -------------------- HEADER / NAV -------------------- */
@@ -223,47 +204,43 @@ header {
 
 /* -------------------- MAIN LAYOUT -------------------- */
 
-main {
+.games-page {
   max-width: 800px;
   margin: 0 auto;
   padding: 70px 40px 90px;
 }
 
-/* -------------------- INTRO / PAGE CONTENT -------------------- */
-
-.intro {
-  max-width: 700px;
-  margin: 0 auto 70px;
-  padding: 0 20px;
-  text-align: left;
-  line-height: 1.7;
+.games-hero {
+  margin-bottom: 65px;
 }
 
-.intro h2,
-.intro .section-title {
-  margin: 0 0 28px;
+.games-page-title {
+  margin: 0 0 26px;
+  color: #a970ff;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 8px #a970ff,
+    0 0 16px #a970ff,
+    0 0 32px #a970ff;
 }
 
-.intro p {
-  color: #00f5ff;
+.games-hero-text,
+.text-card p,
+.media-caption,
+.sources-list a {
   font-size: 11px;
   line-height: 1.9;
-  margin: 0 0 28px;
 }
-
-/* -------------------- SECTION SPACING -------------------- */
 
 section {
   margin-bottom: 65px;
 }
 
-h2 {
-  margin: 0 0 26px;
-}
-
-h3 {
-  margin: 42px 0 18px;
-  color: #a970ff;   /* same purple as main header */
+.games-genre-title {
+  margin: 0 0 18px;
+  color: #a970ff;
   font-size: 15px;
   letter-spacing: 1px;
   text-shadow:
@@ -271,38 +248,91 @@ h3 {
     0 0 12px #a970ff;
 }
 
-p {
-  margin: 0 0 26px;
-  font-size: 11px;
-  line-height: 1.9;
+/* -------------------- GRID / CARDS -------------------- */
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
-/* -------------------- IMAGE GALLERY -------------------- */
-
-.image-gallery {
-  margin-top: 55px;
+.game-card {
+  background: rgba(0, 0, 0, 0.72);
+  border: 2px solid #00f5ff;
+  border-radius: 12px;
+  box-shadow:
+    0 0 10px rgba(0, 245, 255, 0.2),
+    0 0 20px rgba(169, 112, 255, 0.08);
 }
 
-.image-gallery h3 {
-  margin-bottom: 24px;
+.media-card {
+  display: block;
+  min-height: auto;
+  padding: 1rem;
 }
 
-.image-gallery img {
-  margin-top: 18px;
+.text-card {
+  display: block;
+  text-align: left;
+  min-height: auto;
+  padding: 1rem 1.2rem;
+}
+
+.media-image,
+.video-frame {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 
-.image-caption {
-  margin-top: 12px;
+.video-frame {
+  min-height: 250px;
+}
+
+.track-title {
+  margin: 0 0 1rem;
+  color: #00f5ff;
   font-size: 10px;
   line-height: 1.6;
+}
+
+.media-caption {
+  margin: 1rem 0 0;
   color: #00f5ff;
 }
 
-/* -------------------- CONTENT BOXES (OPTIONAL) -------------------- */
+.text-card p {
+  margin: 0;
+  color: #00f5ff;
+}
 
-.content-block {
-  margin-bottom: 55px;
+/* -------------------- SOURCES -------------------- */
+
+.sources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sources-list li {
+  margin-bottom: 12px;
+}
+
+.sources-list li:last-child {
+  margin-bottom: 0;
+}
+
+.sources-list a {
+  display: inline-block;
+  text-decoration: none;
+  color: #00f5ff;
+}
+
+.sources-list a:hover {
+  color: #b4ebe4;
+  text-shadow:
+    0 0 5px #b4ebe4,
+    0 0 10px #b4ebe4;
 }
 
 /* -------------------- MOBILE -------------------- */
@@ -329,49 +359,48 @@ p {
       0 0 8px rgba(0, 245, 255, 0.5);
   }
 
-  main {
+  .games-page {
     max-width: 100%;
     padding: 40px 18px 70px;
   }
 
-  .intro {
-    max-width: 100%;
-    margin: 0 auto 50px;
-    padding: 0;
-  }
-
-  .section-title,
-  h2 {
+  .games-page-title {
     font-size: 18px;
-    line-height: 1.4;
+    line-height: 1.5;
     text-shadow:
       0 0 5px rgba(169, 112, 255, 0.6),
       0 0 10px rgba(169, 112, 255, 0.4);
   }
 
-  h3 {
+  .games-genre-title {
     font-size: 13px;
-    margin: 34px 0 16px;
+    margin-bottom: 16px;
   }
 
-  .intro p,
-  p,
-  .image-caption {
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .games-hero-text,
+  .text-card p,
+  .media-caption,
+  .sources-list a {
     font-size: 13px;
     line-height: 1.8;
     letter-spacing: 0.5px;
     text-shadow: none;
   }
 
+  .track-title {
+    font-size: 11px;
+  }
+
   section {
     margin-bottom: 50px;
   }
 
-  .image-gallery {
-    margin-top: 40px;
-  }
-
-  .image-gallery img {
-    margin-top: 16px;
+  .video-frame {
+    min-height: 220px;
   }
 }
