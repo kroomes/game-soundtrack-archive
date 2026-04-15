@@ -445,14 +445,15 @@ footer {
     margin: 28px auto;
   }
 
-  .hero h2,
-  .section-title,
-  .card h3 {
-    font-size: 18px;
-    line-height: 1.4;
-    text-shadow:
-      0 0 2px rgba(169, 112, 255, 0.45),
-      0 0 5px rgba(169, 112, 255, 0.22);
+ .hero h2,
+.section-title,
+.archive-category h2,
+.card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  text-shadow:
+    0 0 2px rgba(169, 112, 255, 0.45),
+    0 0 5px rgba(169, 112, 255, 0.22);
   }
 
   .hero p,
